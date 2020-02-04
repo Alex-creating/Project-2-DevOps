@@ -27,11 +27,6 @@
             <name>maven-releases</name>
             <url>http://3.11.84.155:8081/repository/atoz-hosted/</url>
         </repository>
-        <snapshotRepository>
-            <id>nexus</id>
-            <name>maven-snapshots</name>
-            <url>http://3.11.84.155:8081/repository/atoz-hosted/</url>
-        </snapshotRepository>
     </distributionManagement>
 
 	<dependencies>
