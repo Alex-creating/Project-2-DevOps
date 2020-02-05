@@ -24,7 +24,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.bae.RecipeStoreApp;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT, classes = RecipeStoreApp.class)
+@SpringBootTest(classes = RecipeStoreApp.class)
 public class SeleniumTests {
 	
 	@LocalServerPort
@@ -64,7 +64,7 @@ public class SeleniumTests {
 		String editServing = "5";
 		String editMethod = "Stew it";
 		
-		this.driver.get("http://localhost:" + port + "/RecipeStore");
+		this.driver.get("http://3.8.31.195:9090");
 
 		
 		mainPage.submitName(recipeName);
