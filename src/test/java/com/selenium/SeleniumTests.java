@@ -108,7 +108,7 @@ public class SeleniumTests {
 		
 		SeleniumSetupMain mainPage = new SeleniumSetupMain(driver);
 		
-		this.driver.get("http://localhost:" + port + "/RecipeStore");
+		this.driver.get("localhost");
 		
 		String recipeName = "";
 		String recipeWorkingName = "Chicken";
