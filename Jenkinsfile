@@ -8,11 +8,11 @@ pipeline {
         }
         stage('---add in H2---') {
         	steps {
-        		echo "spring.datasource.driver-class-name=org.h2.Driver
-				spring.datasource.url=jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
-				spring.datasource.username=admin
-				spring.datasource.password=password
-				server.servlet.context-path=/RecipeStore
+        		echo "spring.datasource.driver-class-name=org.h2.Driver \n
+				spring.datasource.url=jdbc:h2:mem:db;DB_CLOSE_DELAY=-1 \n
+				spring.datasource.username=admin \n
+				spring.datasource.password=password \n
+				server.servlet.context-path=/RecipeStore \n
 				spring.jpa.database-platform=org.hibernate.dialect.H2Dialect" > ../ubuntu/Project-2-DevOps/src/main/resources/application.properties
 			}
 			}
