@@ -18,13 +18,13 @@ pipeline {
         }
         stage('---buildDocker---') {
         steps {
-        sh "sudo docker build -t alexr12/atoz:$BUILD_NUMBER ."
+        sh "docker build -t alexr12/atoz ."
         }
         }
                 stage('---pushToDocker---') {
         steps {
         withDockerRegistry([ credentialsId: "DockerLog", url: "" ]) {
-        sh "sudo docker push alexr12/atoz:$BUILD_NUMBER"
+        sh "docker push alexr12/atoz"
         }
         }
         }
