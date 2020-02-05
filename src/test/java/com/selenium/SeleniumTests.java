@@ -64,7 +64,7 @@ public class SeleniumTests {
 		String editServing = "5";
 		String editMethod = "Stew it";
 		
-		this.driver.get("http://3.8.130.11:9090");
+		this.driver.get("localhost");
 
 		
 		mainPage.submitName(recipeName);
