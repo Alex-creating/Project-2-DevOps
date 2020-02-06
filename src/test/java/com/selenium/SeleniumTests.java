@@ -36,7 +36,7 @@ public class SeleniumTests {
 	public void setup() {
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 		ChromeOptions options = new ChromeOptions();
-		options.setHeadless(true);
+		//options.setHeadless(true);
 		this.driver = new ChromeDriver(options);
 		this.driver.manage().window().setSize(new Dimension(1600, 700));
 		this.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -63,7 +63,7 @@ public class SeleniumTests {
 		String editServing = "5";
 		String editMethod = "Stew it";
 		
-		this.driver.get("http://35.177.197.217:9090");
+		this.driver.get("http://3.8.94.92:9090");
 
 		
 		mainPage.submitName(recipeName);
@@ -107,7 +107,7 @@ public class SeleniumTests {
 		
 		SeleniumSetupMain mainPage = new SeleniumSetupMain(driver);
 		
-		this.driver.get("http://35.177.197.217:9090");
+		this.driver.get("http://3.8.94.92:9090");
 		
 		String recipeName = "";
 		String recipeWorkingName = "Chicken";
