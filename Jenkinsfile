@@ -27,7 +27,6 @@ pipeline {
         sh "docker push alexr12/atoz"
         }
         }
-        }
-        
+        }        
     }
 }

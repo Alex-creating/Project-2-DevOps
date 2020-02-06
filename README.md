@@ -1,6 +1,6 @@
-# The  Recipe Store
+# DevOps Project
 
-This was my personal solo project assigned by QA Consulting due on the 20th of January.
+The aim of this project was to create a fully-deployed version of a full-stack OOP application as a team of two. 
 
 ## Index
 
@@ -8,7 +8,7 @@ This was my personal solo project assigned by QA Consulting due on the 20th of J
 
 [Solution](#solution)
 
-[Architecture](#architecture)
+[Pipeline Architecture](#architecture)
 
 [Testing](#testing)
 * [Surefire Report](#surefire)
@@ -27,18 +27,23 @@ This was my personal solo project assigned by QA Consulting due on the 20th of J
 <a name="requirements"></a>
 ## Requirements
 
-To create an OOP-based application with utilisation of supporting tools, methodologies and technologies that encapsulate all core modules covered during training. This includes a Trello board, at least 2 tables in a relational database, a functional backend, an integrated RESTful API and a CI/CD solution to deploy in a non-local environment. This must be controlled via source control and tested to at least 80% coverage.
+To create a fully-deployed version of a full stack OOP application, with the support of tools such as Jenkins, Docker, Nginx, Nexus and AWS. There should also be use of VPCs and subnets with appropriate security settings. Upon passing unit and integration tests, the application will be deployed through a test environment and onto a live environment.
 
 <a name="solution"></a>
 ### Solution
 
-I decided to create a recipe store application where you can save your recipes with a list of ingredients, personal categories, a rating and a few other details. You can add and remove categories and ingredients from already saved recipes as well as edit any saved field.
-The recipe has a many to many relationship with both ingredients and categories, this is functional and can be seen through the front end.
+Our team created a Jenkins pipeline which would test and run the development branch of our Git repository in an AWS test environment whenever a change was detected. Jenkins would also be sending an image of the current application to both Docker Hub and Nexus. Upon passing unit, integration and selenium tests the changes to the dev Branch would be pulled into the master branch. This change would again be detected by Jenkins and begin another pipeline to test it and deploy it into a live environment for the user to use.
 
 <a name="architecture"></a>
-## Architecture
+## Pipeline Architecture
 
-![database](https://i.imgur.com/MT8q8AZ.png)
+![database](https://i.imgur.com/MT8q8AZ.png) ¬!!!!CREATE IMAGE OF PIPELINE 
+
+The above diagram shows the pipeline used to deliver continuous integration. Any changes in the source code are pushed to the dev branch on GitHub. A webhook from Jenkins pulls in the changed project and begins the pipeline as determined by the Jenkinsfile. Jenkins will test the unit and integration tests with a combination of JUnit and Mockito tests, then run mvn package and deploy, storing it in Nexus. IT will then build an image using Docker Build and send this to Docker Hub. 
+
+
+
+
 
 The diagram above shows both my initial and final structure for the tables in my database. I managed to stick to my initial design and keep all aspects of the recipes, ingredients and categories. The recipe table is the main focus of this project so the ingredients and categories were designed to fit around the requirements of the recipe.
 ![structure](https://i.imgur.com/ukyCdpL.png)
