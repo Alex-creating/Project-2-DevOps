@@ -63,7 +63,7 @@ public class SeleniumTests {
 		String editServing = "5";
 		String editMethod = "Stew it";
 		
-		this.driver.get("http://3.8.130.11:9090");
+		this.driver.get("http://35.177.197.217:9090");
 
 		
 		mainPage.submitName(recipeName);
@@ -107,7 +107,7 @@ public class SeleniumTests {
 		
 		SeleniumSetupMain mainPage = new SeleniumSetupMain(driver);
 		
-		this.driver.get("http://3.8.130.11:9090");
+		this.driver.get("http://35.177.197.217:9090");
 		
 		String recipeName = "";
 		String recipeWorkingName = "Chicken";
