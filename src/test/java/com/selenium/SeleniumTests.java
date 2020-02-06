@@ -1,14 +1,12 @@
 package com.selenium;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -16,15 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
-import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.test.context.junit4.SpringRunner;
 
-import com.bae.RecipeStoreApp;
-
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = RecipeStoreApp.class)
 public class SeleniumTests {
 	
 
@@ -36,7 +26,7 @@ public class SeleniumTests {
 	public void setup() {
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 		ChromeOptions options = new ChromeOptions();
-		options.setHeadless(true);
+		//options.setHeadless(true);
 		this.driver = new ChromeDriver(options);
 		this.driver.manage().window().setSize(new Dimension(1600, 700));
 		this.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
