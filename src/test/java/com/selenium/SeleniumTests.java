@@ -26,7 +26,7 @@ public class SeleniumTests {
 	public void setup() {
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 		ChromeOptions options = new ChromeOptions();
-		//options.setHeadless(true);
+		options.setHeadless(true);
 		this.driver = new ChromeDriver(options);
 		this.driver.manage().window().setSize(new Dimension(1600, 700));
 		this.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
